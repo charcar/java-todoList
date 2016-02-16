@@ -10,6 +10,8 @@ import static org.fluentlenium.core.filter.FilterConstructor.*;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
+
+  @Override
   public WebDriver getDefaultDriver() {
       return webDriver;
   }
@@ -20,6 +22,23 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
       goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("");
+      assertThat(pageSource()).contains("Task List!");
   }
-}
+
+  @Test
+  public void taskIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    fill("#description").with("Mow the lawn");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your task has been saved.");
+  }
+
+  @Test
+  public void taskIsDisplayed() {
+    goTo("http://localhost:4567/");
+    fill("#description").with("Mow the lawn");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("Mow the lawn");
+  }
+} 
