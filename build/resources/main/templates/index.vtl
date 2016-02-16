@@ -1,7 +1,12 @@
 <h1>Task List!</h2>
 
 <h3>Current Task</h3>
-$task.getDescription()
+
+<ul>
+#foreach ($task in $tasks)
+  <li>$task.getDescription()</li>
+#end
+</ul>
 </hr>
 <p>Add a new Task:</p>
 

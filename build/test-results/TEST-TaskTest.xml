@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TaskTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-02-16T17:29:29" hostname="epicodus-61.local" time="0.0">
+<testsuite name="TaskTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-02-16T18:06:12" hostname="epicodus-61.local" time="0.0">
   <properties/>
   <testcase name="getDescription_getsDescription" classname="TaskTest" time="0.0"/>
   <testcase name="Task_instantiatesCorrectly_true" classname="TaskTest" time="0.0"/>
